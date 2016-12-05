@@ -6,4 +6,8 @@ require __DIR__ . '/../config.php';
 $maxer = new \Maxer\Maxer();
 
 $maxer->login($username, $password);
-$result = $maxer->vouter($maxer->getLastPhotos());
+$result = $maxer->vouter($maxer->getLastPhotos(2));
+
+foreach ($result as $item) {
+    dump($item);
+}

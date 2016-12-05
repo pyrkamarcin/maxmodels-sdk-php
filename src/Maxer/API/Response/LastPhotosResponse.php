@@ -13,9 +13,10 @@ final class LastPhotosResponse extends BaseResponse
 {
     /**
      * @param ResponseInterface $response
+     * @param int $limit
      * @return array
      */
-    public static function parse(ResponseInterface $response)
+    public static function parse(ResponseInterface $response, int $limit = 51)
     {
         $end = explode("data-id=\"", $response->getBody()->getContents());
 
@@ -28,7 +29,7 @@ final class LastPhotosResponse extends BaseResponse
         }
 
         $dataids = array_map('unserialize', array_unique(array_map('serialize', $dataids)));
-        $dataids = array_slice($dataids, 2, 51);
+        $dataids = array_slice($dataids, 2, $limit);
 
         return $dataids;
     }

@@ -34,23 +34,27 @@ class Maxer
     }
 
     /**
+     * @param int $limit
      * @return array
      */
-    public function getLastPhotos()
+    public function getLastPhotos(int $limit)
     {
         $request = new LastPhotosRequest();
-        return LastPhotosResponse::toObjects(LastPhotosResponse::parse($request->execute()));
+        return LastPhotosResponse::toObjects(LastPhotosResponse::parse($request->execute(), $limit));
     }
 
     /**
      * @param array $photos
+     * @return array
      */
     public function vouter(array $photos)
     {
+        $array = [];
         foreach ($photos as $photo) {
             $result = new VouteRequest($this->getToken(), $photo->getId());
-            $result->execute();
+            $array[] = $result->execute();
         }
+        return $array;
     }
 
     /**
