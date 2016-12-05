@@ -52,11 +52,9 @@ class Maxer
 
         foreach ($photos as $photo) {
 
-            $token = new Token();
-
             $result = new VoutePhotoRequest(
-                $token->getValue(),
-                $photo->getId()
+                new Token(),
+                $photo
             );
             dump($this);
 

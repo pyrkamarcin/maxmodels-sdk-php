@@ -2,6 +2,7 @@
 
 namespace Maxer\API\Request;
 
+use Maxer\API\Framework\Token;
 use Maxer\API\Model\Photo;
 
 /**
@@ -15,9 +16,9 @@ class VoutePhotoRequest extends PageRequest
      * @param string $token
      * @param Photo $photo
      */
-    public function __construct(string $token, Photo $photo)
+    public function __construct(Token $token, Photo $photo)
     {
-        parent::__construct('http://www.maxmodels.pl/photo/vote/t/' . $token);
+        parent::__construct('http://www.maxmodels.pl/photo/vote/t/' . $token->getValue());
 
         $this->setMethod('post');
         $this->setBody([

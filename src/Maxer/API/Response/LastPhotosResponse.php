@@ -9,7 +9,7 @@ use Psr\Http\Message\ResponseInterface;
  * Class LastPhotosResponse
  * @package Maxer\API\Response
  */
-final class LastPhotosResponse extends BaseResponse
+final class LastPhotosResponse extends BaseResponse implements Response
 {
     /**
      * @param ResponseInterface $response
@@ -33,7 +33,6 @@ final class LastPhotosResponse extends BaseResponse
 
         return $dataids;
     }
-
 
     /**
      * @param array $dataids
