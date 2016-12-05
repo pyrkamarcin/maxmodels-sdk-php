@@ -1,0 +1,38 @@
+<?php
+
+namespace Maxer\API\Request;
+
+/**
+ * Class LoginRequest
+ * @package Maxer\API\Request
+ */
+final class LoginRequest extends BaseRequest
+{
+    /**
+     * LoginRequest constructor.
+     * @param string $username
+     * @param string $password
+     */
+    public function __construct(string $username, string $password)
+    {
+        $this->setPath('https://www.maxmodels.pl/user/login');
+        $this->setMethod('post');
+        $this->setBody(
+            [
+                'form_params' => [
+                    'email' => $username,
+                    'password' => $password,
+                    'referer' => '/']
+            ]);
+
+        parent::__construct();
+    }
+
+    /**
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function execute()
+    {
+        return parent::execute();
+    }
+}
