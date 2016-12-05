@@ -7,8 +7,8 @@ class MaxerTest extends PHPUnit_Framework_TestCase
         $maxer = new \Maxer\Maxer();
 
         $maxer->login('', '');
-        $token = $maxer->getToken();
+        $token = new \Maxer\API\Framework\Token();
 
-        $this->assertTrue(is_string($token));
+        $this->assertTrue(is_string($token->getValue()));
     }
 }

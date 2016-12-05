@@ -5,10 +5,8 @@ namespace Maxer;
 use Maxer\API\Framework\Token;
 use Maxer\API\Request\LastPhotosRequest;
 use Maxer\API\Request\LoginRequest;
-use Maxer\API\Request\TokenRequest;
-use Maxer\API\Request\VouteRequest;
+use Maxer\API\Request\VoutePhotoRequest;
 use Maxer\API\Response\LastPhotosResponse;
-use Maxer\API\Response\TokenResponse;
 
 /**
  * Class Maxer
@@ -53,22 +51,17 @@ class Maxer
         $array = [];
 
         foreach ($photos as $photo) {
-            $result = new VouteRequest(
-                $this->getToken()->getValue(),
+
+            $token = new Token();
+
+            $result = new VoutePhotoRequest(
+                $token->getValue(),
                 $photo->getId()
             );
+            dump($this);
 
             $array[] = $result->execute();
         }
         return $array;
-    }
-
-
-    public function getToken()
-    {
-        $request = new TokenRequest();
-        return new Token(
-            TokenResponse::parse($request->execute())
-        );
     }
 }

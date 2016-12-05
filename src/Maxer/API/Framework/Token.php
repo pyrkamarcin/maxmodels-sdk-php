@@ -2,24 +2,20 @@
 
 namespace Maxer\API\Framework;
 
+use Maxer\API\Request\TokenRequest;
+use Maxer\API\Response\TokenResponse;
+
 /**
  * Class Token
  * @package Maxer\API\Framework
  */
-class Token
+final class Token
 {
     /**
-     * @var string
-     */
-    private $value;
-
-    /**
      * Token constructor.
-     * @param string $value
      */
-    public function __construct(string $value)
+    public function __construct()
     {
-        $this->value = $value;
     }
 
     /**
@@ -27,6 +23,7 @@ class Token
      */
     public function getValue(): string
     {
-        return $this->value;
+        $request = new TokenRequest();
+        return TokenResponse::parse($request->execute());
     }
 }

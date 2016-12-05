@@ -2,23 +2,20 @@
 
 namespace Maxer\API\Request;
 
-/**
- * Class VouteRequest
- * @package Maxer\API\Request
- */
-/**
- * Class VouteRequest
- * @package Maxer\API\Request
- */
-class VouteRequest extends PageRequest
-{
+use Maxer\API\Model\Photo;
 
+/**
+ * Class VoutePhotoRequest
+ * @package Maxer\API\Request
+ */
+class VoutePhotoRequest extends PageRequest
+{
     /**
-     * VouteRequest constructor.
+     * VoutePhotoRequest constructor.
      * @param string $token
-     * @param string $item
+     * @param Photo $photo
      */
-    public function __construct(string $token, string $item)
+    public function __construct(string $token, Photo $photo)
     {
         parent::__construct('http://www.maxmodels.pl/photo/vote/t/' . $token);
 
@@ -26,7 +23,7 @@ class VouteRequest extends PageRequest
         $this->setBody([
             'form_params' => [
                 'rate' => 6,
-                'id' => $item,
+                'id' => $photo->getId(),
             ]
         ]);
     }
