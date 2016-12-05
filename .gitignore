@@ -1,4 +1,5 @@
 /vendor/
-.idea
-composer.lock
+/.idea
+/composer.lock
+/composer.phar
 /config.php

@@ -39,16 +39,16 @@ class Maxer
     public function getLastPhotos()
     {
         $request = new LastPhotosRequest();
-        return LastPhotosResponse::parse($request->execute());
+        return LastPhotosResponse::toObjects(LastPhotosResponse::parse($request->execute()));
     }
 
     /**
-     * @param array $dataids
+     * @param array $photos
      */
-    public function vouter(array $dataids)
+    public function vouter(array $photos)
     {
-        foreach ($dataids as $item) {
-            $result = new VouteRequest($this->getToken(), $item);
+        foreach ($photos as $photo) {
+            $result = new VouteRequest($this->getToken(), $photo->getId());
             $result->execute();
         }
     }

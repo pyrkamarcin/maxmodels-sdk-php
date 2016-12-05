@@ -2,10 +2,19 @@
 
 namespace Maxer\API\Response;
 
+use Maxer\API\Model\Photo;
 use Psr\Http\Message\ResponseInterface;
 
+/**
+ * Class LastPhotosResponse
+ * @package Maxer\API\Response
+ */
 final class LastPhotosResponse extends BaseResponse
 {
+    /**
+     * @param ResponseInterface $response
+     * @return array
+     */
     public static function parse(ResponseInterface $response)
     {
         $end = explode("data-id=\"", $response->getBody()->getContents());
@@ -22,5 +31,21 @@ final class LastPhotosResponse extends BaseResponse
         $dataids = array_slice($dataids, 2, 51);
 
         return $dataids;
+    }
+
+
+    /**
+     * @param array $dataids
+     * @return array
+     */
+    public static function toObjects(array $dataids)
+    {
+        $array = [];
+        foreach ($dataids as $dataid) {
+            $array[] = new Photo([
+                'id' => $dataid
+            ]);
+        }
+        return $array;
     }
 }
