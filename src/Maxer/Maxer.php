@@ -56,7 +56,6 @@ class Maxer
                 new Token(),
                 $photo
             );
-            dump($this);
 
             $array[] = $result->execute();
         }
