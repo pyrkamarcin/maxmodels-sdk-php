@@ -6,9 +6,18 @@ namespace Maxer\API\Request;
  * Class VouteRequest
  * @package Maxer\API\Request
  */
+/**
+ * Class VouteRequest
+ * @package Maxer\API\Request
+ */
 class VouteRequest extends PageRequest
 {
 
+    /**
+     * VouteRequest constructor.
+     * @param string $token
+     * @param string $item
+     */
     public function __construct(string $token, string $item)
     {
         parent::__construct('http://www.maxmodels.pl/photo/vote/t/' . $token);
