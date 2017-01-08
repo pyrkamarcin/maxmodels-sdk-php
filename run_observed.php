@@ -7,7 +7,7 @@ $maxer = new \Maxer\Maxer();
 
 $maxer->login($username, $password);
 
-$photos = $maxer->getObservedtPhotos(20);
+$photos = $maxer->getObservedtPhotos(12);
 foreach ($photos as $photo) {
     $vouteResults = $maxer->vouter($photo);
     sleep(30);
