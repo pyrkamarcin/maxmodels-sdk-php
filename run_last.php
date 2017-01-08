@@ -10,5 +10,6 @@ $maxer->login($username, $password);
 $photos = $maxer->getLastPhotos(10);
 foreach ($photos as $photo) {
     $vouteResults = $maxer->vouter($photo);
+    echo $vouteResults->getStatusCode();
     sleep(10);
 }
