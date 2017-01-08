@@ -15,4 +15,15 @@ class MaxerTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(200, $vouteResults->getStatusCode());
     }
+
+    public function testLoginGetPhotos()
+    {
+        require('config.php');
+
+        $maxer = new \Maxer\Maxer();
+        $maxer->login($username, $password);
+        $photos = $maxer->getLastPhotos(5);
+
+        $this->assertCount(5, $photos);
+    }
 }
