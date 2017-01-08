@@ -3,6 +3,7 @@
 namespace Maxer;
 
 use Maxer\API\Framework\Token;
+use Maxer\API\Model\Photo;
 use Maxer\API\Request\LastPhotosRequest;
 use Maxer\API\Request\LoginRequest;
 use Maxer\API\Request\VoutePhotoRequest;
@@ -43,22 +44,11 @@ class Maxer
     }
 
     /**
-     * @param array $photos
-     * @return array
+     * @param Photo $photo
+     * @return VoutePhotoRequest
      */
-    public function vouter(array $photos)
+    public function vouter(Photo $photo)
     {
-        $array = [];
-
-        foreach ($photos as $photo) {
-
-            $result = new VoutePhotoRequest(
-                new Token(),
-                $photo
-            );
-
-            $array[] = $result->execute();
-        }
-        return $array;
+        return new VoutePhotoRequest(new Token(), $photo);
     }
 }

@@ -7,4 +7,7 @@ $maxer = new \Maxer\Maxer();
 
 $maxer->login($username, $password);
 $photos = $maxer->getLastPhotos(20);
-$vouteResults = $maxer->vouter($photos);
+
+foreach ($photos as $photo) {
+    $vouteResults = $maxer->vouter($photo);
+}
