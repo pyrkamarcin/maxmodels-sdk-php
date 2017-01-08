@@ -43,12 +43,9 @@ class Maxer
         return LastPhotosResponse::toObjects(LastPhotosResponse::parse($request->execute(), $limit));
     }
 
-    /**
-     * @param Photo $photo
-     * @return VoutePhotoRequest
-     */
     public function vouter(Photo $photo)
     {
-        return new VoutePhotoRequest(new Token(), $photo);
+        $request = new VoutePhotoRequest(new Token(), $photo);
+        return $request->execute();
     }
 }

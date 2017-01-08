@@ -2,13 +2,17 @@
 
 class MaxerTest extends PHPUnit_Framework_TestCase
 {
-    public function testLoginAndGetToken()
+    public function testLoginGetOnePhotoAndVoute()
     {
+        require('config.php');
+
         $maxer = new \Maxer\Maxer();
+        $maxer->login($username, $password);
+        $photos = $maxer->getLastPhotos(1);
 
-        $maxer->login('', '');
-        $token = new \Maxer\API\Framework\Token();
+        $vouteResults = $maxer->vouter($photos[0]);
+        $vouteResults->getStatusCode();
 
-        $this->assertTrue(is_string($token->getValue()));
+        $this->assertEquals(200, $vouteResults->getStatusCode());
     }
 }
