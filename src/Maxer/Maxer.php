@@ -54,6 +54,10 @@ class Maxer
         return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));
     }
 
+    /**
+     * @param Photo $photo
+     * @return \Psr\Http\Message\ResponseInterface
+     */
     public function vouter(Photo $photo)
     {
         $request = new VoutePhotoRequest(new Token(), $photo);
