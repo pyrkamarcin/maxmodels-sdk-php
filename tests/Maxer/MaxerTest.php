@@ -27,6 +27,18 @@ class MaxerTest extends PHPUnit_Framework_TestCase
         $this->assertCount(5, $photos);
     }
 
+
+    public function testLoginGetObservedPhotos()
+    {
+        require('config.php');
+
+        $maxer = new \Maxer\Maxer();
+        $maxer->login($username, $password);
+        $photos = $maxer->getObservedtPhotos(3);
+
+        $this->assertCount(3, $photos);
+    }
+
     public function testLoginGetPhotoAndValidateId()
     {
 

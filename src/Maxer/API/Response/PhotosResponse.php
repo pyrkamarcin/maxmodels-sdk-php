@@ -6,10 +6,10 @@ use Maxer\API\Model\Photo;
 use Psr\Http\Message\ResponseInterface;
 
 /**
- * Class LastPhotosResponse
+ * Class PhotosResponse
  * @package Maxer\API\Response
  */
-final class LastPhotosResponse extends BaseResponse implements Response
+final class PhotosResponse extends BaseResponse implements Response
 {
     /**
      * @param ResponseInterface $response
