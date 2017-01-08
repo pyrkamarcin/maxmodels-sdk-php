@@ -4,10 +4,8 @@ class MaxerTest extends PHPUnit_Framework_TestCase
 {
     public function testLoginGetOnePhotoAndVoute()
     {
-        require('config.php');
-
         $maxer = new \Maxer\Maxer();
-        $maxer->login($username, $password);
+        $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
         $photos = $maxer->getLastPhotos(1);
 
         $vouteResults = $maxer->vouter($photos[0]);
@@ -18,10 +16,8 @@ class MaxerTest extends PHPUnit_Framework_TestCase
 
     public function testLoginGetPhotos()
     {
-        require('config.php');
-
         $maxer = new \Maxer\Maxer();
-        $maxer->login($username, $password);
+        $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
         $photos = $maxer->getLastPhotos(5);
 
         $this->assertCount(5, $photos);
@@ -30,10 +26,8 @@ class MaxerTest extends PHPUnit_Framework_TestCase
 
     public function testLoginGetObservedPhotos()
     {
-        require('config.php');
-
         $maxer = new \Maxer\Maxer();
-        $maxer->login($username, $password);
+        $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
         $photos = $maxer->getObservedtPhotos(3);
 
         $this->assertCount(3, $photos);
@@ -41,11 +35,8 @@ class MaxerTest extends PHPUnit_Framework_TestCase
 
     public function testLoginGetPhotoAndValidateId()
     {
-
-        require('config.php');
-
         $maxer = new \Maxer\Maxer();
-        $maxer->login($username, $password);
+        $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
         $photos = $maxer->getLastPhotos(1);
 
         $photo = $photos[0];
