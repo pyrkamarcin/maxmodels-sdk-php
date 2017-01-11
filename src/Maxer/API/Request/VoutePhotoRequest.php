@@ -13,17 +13,18 @@ class VoutePhotoRequest extends PageRequest
 {
     /**
      * VoutePhotoRequest constructor.
-     * @param string $token
+     * @param Token $token
      * @param Photo $photo
+     * @param int $rate
      */
-    public function __construct(Token $token, Photo $photo)
+    public function __construct(Token $token, Photo $photo, int $rate = 6)
     {
         parent::__construct('http://www.maxmodels.pl/photo/vote/t/' . $token->getValue());
 
         $this->setMethod('post');
         $this->setBody([
             'form_params' => [
-                'rate' => 6,
+                'rate' => $rate,
                 'id' => $photo->getId(),
             ]
         ]);

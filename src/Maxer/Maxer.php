@@ -56,11 +56,12 @@ class Maxer
 
     /**
      * @param Photo $photo
+     * @param int $rate
      * @return \Psr\Http\Message\ResponseInterface
      */
-    public function vouter(Photo $photo)
+    public function setPhotoVoute(Photo $photo, int $rate)
     {
-        $request = new VoutePhotoRequest(new Token(), $photo);
+        $request = new VoutePhotoRequest(new Token(), $photo, $rate);
         return $request->execute();
     }
 }

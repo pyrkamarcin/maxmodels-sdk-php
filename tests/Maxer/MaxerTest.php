@@ -8,7 +8,7 @@ class MaxerTest extends PHPUnit_Framework_TestCase
         $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
         $photos = $maxer->getLastPhotos(1);
 
-        $vouteResults = $maxer->vouter($photos[0]);
+        $vouteResults = $maxer->setPhotoVoute($photos[0], 5);
         $vouteResults->getStatusCode();
 
         $this->assertEquals(200, $vouteResults->getStatusCode());
