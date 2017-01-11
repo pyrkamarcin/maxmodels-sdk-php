@@ -1,7 +1,13 @@
 <?php
 
+/**
+ * Class MaxerTest
+ */
 class MaxerTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     *
+     */
     public function testLoginGetOnePhotoAndVoute()
     {
         $maxer = new \Maxer\Maxer();
@@ -14,6 +20,9 @@ class MaxerTest extends PHPUnit_Framework_TestCase
         $this->assertEquals(200, $vouteResults->getStatusCode());
     }
 
+    /**
+     *
+     */
     public function testLoginGetPhotos()
     {
         $maxer = new \Maxer\Maxer();
@@ -24,6 +33,9 @@ class MaxerTest extends PHPUnit_Framework_TestCase
     }
 
 
+    /**
+     *
+     */
     public function testLoginGetObservedPhotos()
     {
         $maxer = new \Maxer\Maxer();
@@ -33,6 +45,9 @@ class MaxerTest extends PHPUnit_Framework_TestCase
         $this->assertCount(3, $photos);
     }
 
+    /**
+     *
+     */
     public function testLoginGetPhotoAndValidateId()
     {
         $maxer = new \Maxer\Maxer();

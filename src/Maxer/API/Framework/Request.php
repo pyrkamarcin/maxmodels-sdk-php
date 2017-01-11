@@ -8,7 +8,6 @@ namespace Maxer\API\Framework;
  */
 class Request
 {
-
     /**
      * @var
      */
@@ -68,7 +67,8 @@ class Request
                 break;
             }
             case 'post': {
-                $this->response = $this->client->post(
+                $this->response = $this->client->request(
+                    'POST',
                     $this->getPath(),
                     $this->getBody()
                 );

@@ -9,7 +9,7 @@ $maxer->login($username, $password);
 
 $photos = $maxer->getObservedtPhotos(12);
 foreach ($photos as $photo) {
-    $vouteResults = $maxer->vouter($photo);
+    $vouteResults = $maxer->setPhotoVoute($photo, 6);
     echo $vouteResults->getStatusCode();
     sleep(30);
 }
