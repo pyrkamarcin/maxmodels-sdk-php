@@ -4,6 +4,7 @@ namespace Maxer\API\Request;
 
 use Maxer\API\Framework\Token;
 use Maxer\API\Model\Photo;
+use Maxer\API\Request\Base\PageRequest;
 
 /**
  * Class VoutePhotoRequest

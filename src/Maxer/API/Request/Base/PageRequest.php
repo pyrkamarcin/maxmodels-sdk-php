@@ -1,12 +1,12 @@
 <?php
 
-namespace Maxer\API\Request;
+namespace Maxer\API\Request\Base;
 
 use Maxer\API\Framework\Request;
 
 /**
  * Class PageRequest
- * @package Maxer\API\Request
+ * @package Maxer\API\Request\Base
  */
 class PageRequest extends Request
 {

@@ -2,6 +2,8 @@
 
 namespace Maxer\API\Request;
 
+use Maxer\API\Request\Base\BaseRequest;
+
 /**
  * Class LoginRequest
  * @package Maxer\API\Request

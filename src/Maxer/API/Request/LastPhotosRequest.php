@@ -2,6 +2,8 @@
 
 namespace Maxer\API\Request;
 
+use Maxer\API\Request\Base\PageRequest;
+
 /**
  * Class LastPhotosRequest
  * @package Maxer\API\Request
