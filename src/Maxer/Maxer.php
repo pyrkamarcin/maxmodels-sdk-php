@@ -4,6 +4,8 @@ namespace Maxer;
 
 use Maxer\API\Framework\Token;
 use Maxer\API\Model\Photo;
+use Maxer\API\Model\User;
+use Maxer\API\Request\Base\PageRequest;
 use Maxer\API\Request\LastPhotosRequest;
 use Maxer\API\Request\LoginRequest;
 use Maxer\API\Request\ObservedPhotosRequest;
@@ -54,6 +56,13 @@ class Maxer
         return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));
     }
 
+    public function getUserPhotos(User $user, int $limit)
+    {
+        $link = 'http://www.maxmodels.pl/modelka-' . $user->getName() . '.html';
+        $request = new PageRequest($link, 12);
+        return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));
+    }
+
     /**
      * @param Photo $photo
      * @param int $rate
@@ -64,4 +73,5 @@ class Maxer
         $request = new VoutePhotoRequest(new Token(), $photo, $rate);
         return $request->execute();
     }
+
 }

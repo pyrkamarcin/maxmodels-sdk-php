@@ -58,4 +58,16 @@ class MaxerTest extends PHPUnit_Framework_TestCase
 
         $this->assertEquals(true, is_string($photo->getId()));
     }
+
+    public function testGetUserPhoto()
+    {
+        $maxer = new \Maxer\Maxer();
+        $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
+
+        $users = new \Maxer\API\Request\UserRequest();
+        $users = \Maxer\API\Response\UserResponse::toObjects(\Maxer\API\Response\UserResponse::parse($users->execute(), 8));
+
+        $photos = $maxer->getUserPhotos($users[0], 3);
+        $this->assertCount(3, $photos);
+    }
 }
