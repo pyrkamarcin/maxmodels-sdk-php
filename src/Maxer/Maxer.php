@@ -73,5 +73,4 @@ class Maxer
         $request = new VoutePhotoRequest(new Token(), $photo, $rate);
         return $request->execute();
     }
-
 }

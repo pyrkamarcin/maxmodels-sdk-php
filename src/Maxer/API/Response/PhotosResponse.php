@@ -29,7 +29,7 @@ final class PhotosResponse extends BaseResponse implements Response
         }
 
         $dataids = array_map('unserialize', array_unique(array_map('serialize', $dataids)));
-        $dataids = array_slice($dataids, 2, $limit);
+        $dataids = array_slice($dataids, 1, $limit);
 
         return $dataids;
     }
