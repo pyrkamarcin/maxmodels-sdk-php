@@ -50,7 +50,7 @@ class Maxer
      * @param int $limit
      * @return array
      */
-    public function getObservedtPhotos(int $limit)
+    public function getObservedPhotos(int $limit)
     {
         $request = new ObservedPhotosRequest();
         return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));

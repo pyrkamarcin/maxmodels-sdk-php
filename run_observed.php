@@ -7,7 +7,7 @@ $maxer = new \Maxer\Maxer();
 
 $maxer->login($username, $password);
 
-$photos = $maxer->getObservedtPhotos(12);
+$photos = $maxer->getObservedPhotos(12);
 foreach ($photos as $photo) {
     $vouteResults = $maxer->setPhotoVoute($photo, 6);
     echo $vouteResults->getStatusCode();

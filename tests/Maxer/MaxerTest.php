@@ -40,7 +40,7 @@ class MaxerTest extends PHPUnit_Framework_TestCase
     {
         $maxer = new \Maxer\Maxer();
         $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
-        $photos = $maxer->getObservedtPhotos(3);
+        $photos = $maxer->getObservedPhotos(3);
 
         $this->assertCount(3, $photos);
     }
