@@ -14,6 +14,27 @@ class Photo extends Model
     protected $id;
 
     /**
+     * @var
+     */
+    protected $url;
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
+    /**
      * @return mixed
      */
     public function getId()

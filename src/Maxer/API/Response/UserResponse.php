@@ -11,7 +11,7 @@ class UserResponse extends BaseResponse implements Response
     {
         $end = explode("data-usr_id=\"", $response->getBody()->getContents());
         $end = array_slice($end, 1, $limit);
-        $dataids = array();
+        $dataids = [];
 
         foreach ($end as $key => $node) {
             $rest = substr($node, 0, 7);
