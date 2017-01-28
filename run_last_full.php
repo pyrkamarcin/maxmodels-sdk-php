@@ -11,7 +11,7 @@ $users = \Maxer\API\Response\UserResponse::toObjects(\Maxer\API\Response\UserRes
 
 foreach ($users as $user) {
 
-    $photos = $maxer->getUserPhotos($users[0], 6);
+    $photos = $maxer->getUserPhotos($user, 6);
 
     echo sprintf("\r\n" . 'User: %s: ', $user->getName());
 
