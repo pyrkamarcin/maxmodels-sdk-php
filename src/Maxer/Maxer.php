@@ -56,6 +56,11 @@ class Maxer
         return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));
     }
 
+    /**
+     * @param User $user
+     * @param int $limit
+     * @return array
+     */
     public function getUserPhotos(User $user, int $limit)
     {
         $link = 'http://www.maxmodels.pl/modelka-' . $user->getName() . '.html';

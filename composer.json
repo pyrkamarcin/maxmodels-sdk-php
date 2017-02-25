@@ -1,7 +1,7 @@
 {
   "name": "pyrkamarcin/maxmodels-sdk-php",
   "description": "none",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
   "license": "MIT",
   "autoload": {
     "psr-4": {

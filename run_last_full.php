@@ -13,13 +13,10 @@ foreach ($users as $user) {
 
     $photos = $maxer->getUserPhotos($user, 6);
 
-    var_dump($photos);
-
     echo sprintf("\r\n" . 'User: %s: ', $user->getName());
 
     foreach ($photos as $photo) {
         $vouteResults = $maxer->setPhotoVoute($photo, 6);
-//        echo sprintf('.');
 
         dump($vouteResults->getBody()->getContents());
 
