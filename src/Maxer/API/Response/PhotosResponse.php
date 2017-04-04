@@ -18,7 +18,7 @@ final class PhotosResponse extends BaseResponse implements Response
      */
     public static function parse(ResponseInterface $response, int $limit = 51)
     {
-        $end = explode("data-id=\"", $response->getBody()->getContents());
+        $end = explode('data-id="', $response->getBody()->getContents());
         $end = array_slice($end, 1, $limit + 1);
 
         $dataids = [];

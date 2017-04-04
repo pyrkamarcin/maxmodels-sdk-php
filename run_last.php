@@ -8,8 +8,11 @@ $maxer = new \Maxer\Maxer();
 $maxer->login($username, $password);
 
 $photos = $maxer->getLastPhotos(10);
-foreach ($photos as $photo) {
-    $vouteResults = $maxer->setPhotoVoute($photo, 6);
-    echo $vouteResults->getStatusCode();
-    sleep(10);
-}
+
+dump($photos);
+
+//foreach ($photos as $photo) {
+//    $vouteResults = $maxer->setPhotoVoute($photo, 6);
+//    echo $vouteResults->getStatusCode();
+//    sleep(10);
+//}
