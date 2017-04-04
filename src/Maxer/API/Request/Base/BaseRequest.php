@@ -17,12 +17,4 @@ class BaseRequest extends Request
     {
         parent::__construct();
     }
-
-    /**
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function execute()
-    {
-        return parent::execute();
-    }
 }

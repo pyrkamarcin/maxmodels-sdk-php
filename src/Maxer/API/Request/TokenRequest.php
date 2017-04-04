@@ -21,12 +21,4 @@ final class TokenRequest extends BaseRequest
         $this->setMethod('get');
         $this->setBody(array());
     }
-
-    /**
-     * @return \Psr\Http\Message\ResponseInterface
-     */
-    public function execute()
-    {
-        return parent::execute();
-    }
 }

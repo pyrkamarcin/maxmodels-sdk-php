@@ -13,6 +13,7 @@ final class TokenResponse extends BaseResponse implements Response
     /**
      * @param ResponseInterface $response
      * @return string
+     * @throws \RuntimeException
      */
     public static function parse(ResponseInterface $response)
     {
