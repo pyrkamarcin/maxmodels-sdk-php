@@ -16,6 +16,7 @@ class UserRequest extends PageRequest
     public function __construct()
     {
         parent::__construct('http://www.maxmodels.pl/modelka.html?filter%5Bsort%5D=active');
+        $this->setMethod('get');
     }
 
     /**

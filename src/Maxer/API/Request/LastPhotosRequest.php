@@ -16,6 +16,7 @@ class LastPhotosRequest extends PageRequest
     public function __construct()
     {
         parent::__construct('http://www.maxmodels.pl/wszystkie-zdjecia,0.html');
+        $this->setMethod('get');
     }
 
     /**

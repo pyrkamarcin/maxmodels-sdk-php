@@ -16,6 +16,7 @@ class ObservedPhotosRequest extends PageRequest
     public function __construct()
     {
         parent::__construct('http://www.maxmodels.pl/obserwowane,0.html');
+        $this->setMethod('get');
     }
 
     /**
