@@ -5,7 +5,6 @@
  */
 class UserResponseTest extends PHPUnit_Framework_TestCase
 {
-ystąpił błąd (undefined)
     /**
      *
      */
