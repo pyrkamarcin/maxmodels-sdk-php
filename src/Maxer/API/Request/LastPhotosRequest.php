@@ -12,6 +12,7 @@ class LastPhotosRequest extends PageRequest
 {
     /**
      * LastPhotosRequest constructor.
+     * @throws \InvalidArgumentException
      */
     public function __construct()
     {

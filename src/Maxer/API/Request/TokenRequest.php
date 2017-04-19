@@ -12,6 +12,7 @@ final class TokenRequest extends BaseRequest
 {
     /**
      * TokenRequest constructor.
+     * @throws \InvalidArgumentException
      */
     public function __construct()
     {

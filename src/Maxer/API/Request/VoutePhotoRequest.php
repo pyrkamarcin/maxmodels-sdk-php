@@ -17,6 +17,8 @@ class VoutePhotoRequest extends PageRequest
      * @param Token $token
      * @param Photo $photo
      * @param int $rate
+     * @throws \InvalidArgumentException
+     * @throws \RuntimeException
      */
     public function __construct(Token $token, Photo $photo, int $rate = 6)
     {

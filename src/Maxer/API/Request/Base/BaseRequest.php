@@ -10,11 +10,4 @@ use Maxer\API\Framework\Request;
  */
 class BaseRequest extends Request
 {
-    /**
-     * BaseRequest constructor.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-    }
 }

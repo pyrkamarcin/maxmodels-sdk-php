@@ -15,10 +15,11 @@ final class PhotosResponse extends BaseResponse implements Response
      * @param ResponseInterface $response
      * @param int $limit
      * @return array
+     * @throws \RuntimeException
      */
     public static function parse(ResponseInterface $response, int $limit = 51)
     {
-        $end = explode("data-id=\"", $response->getBody()->getContents());
+        $end = explode('data-id="', $response->getBody()->getContents());
         $end = array_slice($end, 1, $limit + 1);
 
         $dataids = [];
@@ -56,7 +57,7 @@ final class PhotosResponse extends BaseResponse implements Response
      * @param array $dataids
      * @return array
      */
-    public static function toObjects(array $dataids)
+    public static function toObjects(array $dataids): array
     {
         $array = [];
         foreach ($dataids as $dataid) {

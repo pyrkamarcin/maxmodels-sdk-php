@@ -12,6 +12,7 @@ class ObservedPhotosRequest extends PageRequest
 {
     /**
      * ObservedPhotosRequest constructor.
+     * @throws \InvalidArgumentException
      */
     public function __construct()
     {

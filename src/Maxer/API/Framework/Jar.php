@@ -60,6 +60,7 @@ final class Jar
 
     /**
      * @return bool|Jar
+     * @throws \InvalidArgumentException
      */
     public static function getInstance()
     {

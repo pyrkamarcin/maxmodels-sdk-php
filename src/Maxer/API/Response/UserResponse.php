@@ -9,7 +9,7 @@ class UserResponse extends BaseResponse implements Response
 {
     public static function parse(ResponseInterface $response, int $limit = 30)
     {
-        $end = explode("data-usr_id=\"", $response->getBody()->getContents());
+        $end = explode('data-usr_id="', $response->getBody()->getContents());
         $end = array_slice($end, 1, $limit);
         $dataids = [];
 
@@ -36,7 +36,7 @@ class UserResponse extends BaseResponse implements Response
      * @param array $dataids
      * @return array
      */
-    public static function toObjects(array $dataids)
+    public static function toObjects(array $dataids): array
     {
         $array = [];
         foreach ($dataids as $data) {

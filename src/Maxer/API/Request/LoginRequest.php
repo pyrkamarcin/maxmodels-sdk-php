@@ -14,6 +14,7 @@ final class LoginRequest extends BaseRequest
      * LoginRequest constructor.
      * @param string $username
      * @param string $password
+     * @throws \InvalidArgumentException
      */
     public function __construct(string $username, string $password)
     {

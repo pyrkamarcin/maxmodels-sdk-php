@@ -20,6 +20,7 @@ final class Token
 
     /**
      * @return string
+     * @throws \RuntimeException
      */
     public function getValue(): string
     {

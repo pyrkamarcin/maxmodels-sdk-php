@@ -2,6 +2,8 @@
 
 namespace Maxer\API\Framework;
 
+use Psr\Http\Message\ResponseInterface;
+
 /**
  * Class Request
  * @package Maxer\API\Framework
@@ -31,6 +33,7 @@ class Request
 
     /**
      * Request constructor.
+     * @throws \InvalidArgumentException
      */
     public function __construct()
     {
@@ -54,9 +57,9 @@ class Request
     }
 
     /**
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
-    public function execute()
+    public function execute(): ResponseInterface
     {
         switch ($this->getMethod()) {
             case 'get': {

@@ -13,6 +13,7 @@ class PageRequest extends Request
     /**
      * PageRequest constructor.
      * @param string $path
+     * @throws \InvalidArgumentException
      */
     public function __construct(string $path)
     {

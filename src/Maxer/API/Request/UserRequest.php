@@ -12,6 +12,7 @@ class UserRequest extends PageRequest
 {
     /**
      * UserRequest constructor.
+     * @throws \InvalidArgumentException
      */
     public function __construct()
     {

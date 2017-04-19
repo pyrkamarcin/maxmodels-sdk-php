@@ -15,7 +15,7 @@ final class TokenResponse extends BaseResponse implements Response
      * @return string
      * @throws \RuntimeException
      */
-    public static function parse(ResponseInterface $response)
+    public static function parse(ResponseInterface $response): string
     {
         $json = json_decode($response->getBody()->getContents(), true);
         return (string)$json['t'];

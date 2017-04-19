@@ -11,6 +11,7 @@ use Maxer\API\Request\LoginRequest;
 use Maxer\API\Request\ObservedPhotosRequest;
 use Maxer\API\Request\VoutePhotoRequest;
 use Maxer\API\Response\PhotosResponse;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Maxer
@@ -28,9 +29,10 @@ class Maxer
     /**
      * @param string $username
      * @param string $password
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
+     * @throws \InvalidArgumentException
      */
-    public function login(string $username, string $password)
+    public function login(string $username, string $password): ResponseInterface
     {
         $request = new LoginRequest($username, $password);
         return $request->execute();
@@ -39,8 +41,10 @@ class Maxer
     /**
      * @param int $limit
      * @return array
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      */
-    public function getLastPhotos(int $limit)
+    public function getLastPhotos(int $limit): array
     {
         $request = new LastPhotosRequest();
         return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));
@@ -49,8 +53,10 @@ class Maxer
     /**
      * @param int $limit
      * @return array
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      */
-    public function getObservedPhotos(int $limit)
+    public function getObservedPhotos(int $limit): array
     {
         $request = new ObservedPhotosRequest();
         return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));
@@ -60,8 +66,10 @@ class Maxer
      * @param User $user
      * @param int $limit
      * @return array
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      */
-    public function getUserPhotos(User $user, int $limit)
+    public function getUserPhotos(User $user, int $limit): array
     {
         $link = 'http://www.maxmodels.pl/modelka-' . $user->getName() . '.html';
         $request = new PageRequest($link, 12);
@@ -71,9 +79,11 @@ class Maxer
     /**
      * @param Photo $photo
      * @param int $rate
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
      */
-    public function setPhotoVoute(Photo $photo, int $rate)
+    public function setPhotoVoute(Photo $photo, int $rate): ResponseInterface
     {
         $request = new VoutePhotoRequest(new Token(), $photo, $rate);
         return $request->execute();
