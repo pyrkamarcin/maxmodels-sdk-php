@@ -11,7 +11,7 @@ $users = \Maxer\API\Response\UserResponse::toObjects(\Maxer\API\Response\UserRes
 
 foreach ($users as $user) {
 
-    $photos = $maxer->getUserPhotos($user, 6);
+    $photos = $maxer->getUserPhotos($user, 20);
 
     echo sprintf("\r\n" . 'User: %s: ', $user->getName());
 
@@ -19,7 +19,5 @@ foreach ($users as $user) {
         $vouteResults = $maxer->setPhotoVoute($photo, 6);
 
         dump($vouteResults->getBody()->getContents());
-
-        sleep(2);
     }
 }
