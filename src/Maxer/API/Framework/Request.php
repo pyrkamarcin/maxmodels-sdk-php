@@ -30,6 +30,7 @@ class Request
      * @var
      */
     private $response;
+    private $raw;
 
     /**
      * Request constructor.
@@ -73,7 +74,8 @@ class Request
                 $this->response = $this->client->request(
                     'POST',
                     $this->getPath(),
-                    $this->getBody()
+                    $this->getBody(),
+                    $this->getRaw()
                 );
                 break;
             }
@@ -129,4 +131,26 @@ class Request
     {
         $this->body = $body;
     }
+
+    public function getRaw()
+    {
+        return $this->raw;
+    }
+
+    /**
+     * @param \GuzzleHttp\Client $client
+     */
+    public function setClient(\GuzzleHttp\Client $client)
+    {
+        $this->client = $client;
+    }
+
+    /**
+     * @param mixed $raw
+     */
+    public function setRaw($raw)
+    {
+        $this->raw = $raw;
+    }
+
 }

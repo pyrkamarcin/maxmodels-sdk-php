@@ -44,7 +44,7 @@ class Maxer
      * @throws \RuntimeException
      * @throws \InvalidArgumentException
      */
-    public function getLastPhotos(int $limit): array
+    public function getLastPhotos(int $limit = 45): array
     {
         $request = new LastPhotosRequest();
         return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));
