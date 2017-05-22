@@ -3,7 +3,7 @@
 /**
  * Class ObservedPhotosRequestTest
  */
-class ObservedPhotosRequestTest extends PHPUnit_Framework_TestCase
+class ObservedPhotosRequestTest extends \PHPUnit\Framework\TestCase
 {
     /**
      *

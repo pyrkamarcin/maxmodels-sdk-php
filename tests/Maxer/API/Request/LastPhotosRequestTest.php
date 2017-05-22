@@ -3,7 +3,7 @@
 /**
  * Class LastPhotosRequestTest
  */
-class LastPhotosRequestTest extends PHPUnit_Framework_TestCase
+class LastPhotosRequestTest extends \PHPUnit\Framework\TestCase
 {
     /**
      *

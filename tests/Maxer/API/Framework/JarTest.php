@@ -3,7 +3,7 @@
 /**
  * Class JarTest
  */
-class JarTest extends PHPUnit_Framework_TestCase
+class JarTest extends \PHPUnit\Framework\TestCase
 {
     /**
      *

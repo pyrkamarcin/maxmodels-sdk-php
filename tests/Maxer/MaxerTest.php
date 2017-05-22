@@ -3,7 +3,7 @@
 /**
  * Class MaxerTest
  */
-class MaxerTest extends PHPUnit_Framework_TestCase
+class MaxerTest extends \PHPUnit\Framework\TestCase
 {
     /**
      *

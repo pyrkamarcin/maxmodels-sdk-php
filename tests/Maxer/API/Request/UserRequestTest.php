@@ -3,7 +3,7 @@
 /**
  * Class UserRequestTest
  */
-class UserRequestTest extends PHPUnit_Framework_TestCase
+class UserRequestTest extends \PHPUnit\Framework\TestCase
 {
     /**
      *
