@@ -6,3 +6,4 @@
 /db.sqlite
 /coverage-dir/
 /tests/coverage/
+/build/

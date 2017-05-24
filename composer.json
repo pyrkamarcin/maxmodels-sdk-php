@@ -1,7 +1,8 @@
 {
   "name": "pyrkamarcin/maxmodels-sdk-php",
   "description": "none",
-  "minimum-stability": "dev",
+  "type": "project",
+  "minimum-stability": "stable",
   "license": "MIT",
   "autoload": {
     "psr-4": {
@@ -18,6 +19,7 @@
     "awesomite/var-dumper": "^0.6"
   },
   "require-dev": {
-    "phpunit/phpunit": "^6.1"
+    "phpunit/phpunit": "^6.1",
+    "codacy/coverage": "^1.1.0"
   }
 }
