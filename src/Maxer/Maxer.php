@@ -9,6 +9,7 @@ use Maxer\API\Request\Base\PageRequest;
 use Maxer\API\Request\LastPhotosRequest;
 use Maxer\API\Request\LoginRequest;
 use Maxer\API\Request\ObservedPhotosRequest;
+use Maxer\API\Request\TokenRequest;
 use Maxer\API\Request\VoutePhotoRequest;
 use Maxer\API\Response\PhotosResponse;
 use Psr\Http\Message\ResponseInterface;
@@ -86,6 +87,12 @@ class Maxer
     public function setPhotoVoute(Photo $photo, int $rate): ResponseInterface
     {
         $request = new VoutePhotoRequest(new Token(), $photo, $rate);
+        return $request->execute();
+    }
+
+    public function getToken()
+    {
+        $request = new TokenRequest();
         return $request->execute();
     }
 }
