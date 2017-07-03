@@ -16,6 +16,6 @@ class TokenTest extends \PHPUnit\Framework\TestCase
         $token = new \Maxer\API\Framework\Token();
 
         dump($token->getValue());
-        $this->assertTrue(is_string($token->getValue()));
+        $this->assertEquals(40, strlen($token->getValue()));
     }
 }

@@ -18,6 +18,6 @@ foreach ($users as $user) {
     foreach ($photos as $photo) {
         $vouteResults = $maxer->setPhotoVoute($photo, 6);
 
-        var_dump($vouteResults->getBody()->getContents());
+        dump($vouteResults->getBody()->getContents());
     }
 }

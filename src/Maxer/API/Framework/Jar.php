@@ -40,7 +40,7 @@ final class Jar
                 new DoctrineCacheStorage(
                     new ChainCache([
                         new ArrayCache(),
-                        new FilesystemCache('/tmp/'),
+                        new FilesystemCache(__DIR__ . '/../../../../tmp/'),
                     ])
                 )
             )

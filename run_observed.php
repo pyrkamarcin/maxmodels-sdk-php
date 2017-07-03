@@ -12,6 +12,5 @@ $photos = $maxer->getObservedPhotos(12);
 
 foreach ($photos as $photo) {
     $vouteResults = $maxer->setPhotoVoute($photo, 6);
-    $dumper->dump($vouteResults->getStatusCode());
-    $dumper->dump($vouteResults->getBody()->getContents());
+    dump($vouteResults->getBody()->getContents());
 }
