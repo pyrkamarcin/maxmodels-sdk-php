@@ -9,4 +9,4 @@ $lastPhoto = $maxer->getLastPhotos();
 //dump($lastPhoto);
 
 $token = $maxer->getToken();
-dump($token->getStatusCode());
+dump($token->getBody()->getContents());

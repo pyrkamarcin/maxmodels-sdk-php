@@ -18,8 +18,8 @@ final class TokenRequest extends BaseRequest
     {
         parent::__construct();
 
-        $this->setPath('http://www.maxmodels.pl/user/t');
-        $this->setMethod('get');
+        $this->setPath('https://www.maxmodels.pl/user/t');
+        $this->setMethod('POST');
         $this->setBody(array());
     }
 }

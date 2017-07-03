@@ -22,7 +22,7 @@ class VoutePhotoRequest extends PageRequest
      */
     public function __construct(Token $token, Photo $photo, int $rate = 6)
     {
-        parent::__construct('http://www.maxmodels.pl/photo/vote/t/' . $token->getValue());
+        parent::__construct('https://www.maxmodels.pl/photo/vote/t/' . $token->getValue());
 
         $this->setMethod('post');
         $this->setBody([
