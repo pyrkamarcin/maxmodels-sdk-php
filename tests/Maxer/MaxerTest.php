@@ -11,7 +11,7 @@ class MaxerTest extends \PHPUnit\Framework\TestCase
     public function testGetUserPhoto()
     {
         $maxer = new \Maxer\Maxer();
-        $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
+        $maxer->login('jaseca@vektik.com', 'W/K8^4h-GD"C3a?X');
 
         $users = new \Maxer\API\Request\UserRequest();
         $users = \Maxer\API\Response\UserResponse::toObjects(\Maxer\API\Response\UserResponse::parse($users->execute(), 4));

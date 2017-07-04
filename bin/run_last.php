@@ -9,9 +9,8 @@ $maxer->login($username, $password);
 
 $photos = $maxer->getLastPhotos(10);
 foreach ($photos as $photo) {
-    dump($photo);
 
     $vouteResults = $maxer->setPhotoVoute($photo, 6);
-    echo $vouteResults->getBody()->getContents();
+    dump($vouteResults->getBody()->getContents());
     sleep(10);
 }

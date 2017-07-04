@@ -11,7 +11,7 @@ class TokenTest extends \PHPUnit\Framework\TestCase
     public function testGetToken()
     {
         $maxer = new \Maxer\Maxer();
-        $maxer->login('nuzikodam@zainmax.net', 'xu?azeq5@raK');
+        $maxer->login('jaseca@vektik.com', 'W/K8^4h-GD"C3a?X');
 
         $token = new \Maxer\API\Framework\Token();
 
