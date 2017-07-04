@@ -14,8 +14,6 @@ class TokenTest extends \PHPUnit\Framework\TestCase
         $maxer->login('jaseca@vektik.com', 'W/K8^4h-GD"C3a?X');
 
         $token = new \Maxer\API\Framework\Token();
-
-        dump($token->getValue());
         $this->assertEquals(32, strlen($token->getValue()));
     }
 }
