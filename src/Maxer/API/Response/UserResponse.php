@@ -27,6 +27,20 @@ class UserResponse extends BaseResponse implements Response
             $dataids[$key]['name'] = $rest;
         }
 
+        foreach ($end as $key => $node) {
+            $text = explode('html">', $node);
+            $text = explode('</a>', $text[1]);
+            $rest = $text[0];
+            $dataids[$key]['full_name'] = $rest;
+        }
+
+        foreach ($end as $key => $node) {
+            $text = explode('<span class="username"><a href="/', $node);
+            $text = explode('">', $text[1]);
+            $rest = $text[0];
+            $dataids[$key]['url'] = 'http://maxmodels.pl/' . $rest;
+        }
+
         $dataids = array_map('unserialize', array_unique(array_map('serialize', $dataids)));
 
         return $dataids;
@@ -42,9 +56,12 @@ class UserResponse extends BaseResponse implements Response
         foreach ($dataids as $data) {
             $array[] = new User([
                 'id' => $data['id'],
-                'name' => $data['name']
+                'name' => $data['name'],
+                'fullName' => $data['full_name'],
+                'url' => $data['url']
             ]);
         }
+
         return $array;
     }
 }

@@ -19,6 +19,16 @@ class User extends Model
     protected $name;
 
     /**
+     * @var
+     */
+    protected $fullName;
+
+    /**
+     * @var
+     */
+    protected $url;
+
+    /**
      * @return mixed
      */
     public function getId()
@@ -48,5 +58,37 @@ class User extends Model
     public function setName($name)
     {
         $this->name = $name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
+    }
+
+    /**
+     * @param mixed $fullName
+     */
+    public function setFullName($fullName)
+    {
+        $this->fullName = $fullName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
     }
 }
