@@ -67,8 +67,6 @@ final class PhotosResponse extends BaseResponse implements Response
             ]);
         }
 
-        dump($array);
-
         return $array;
     }
 }
