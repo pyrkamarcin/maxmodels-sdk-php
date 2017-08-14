@@ -2,7 +2,7 @@
 /.idea
 /composer.lock
 /composer.phar
-/config.php
+/config/config.php
 /db.sqlite
 /coverage-dir/
 /tests/coverage/
