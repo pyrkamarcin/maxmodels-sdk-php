@@ -90,7 +90,6 @@ class Maxer
         $array = [];
 
         for ($a = 0; $a <= $pageCount; $a++) {
-
             $link = 'http://www.maxmodels.pl/modelka-' . $user->getName() . ',' . $a . '.html';
             $request = new PageRequest($link);
             $array[] = PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), 20));
