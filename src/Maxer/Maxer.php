@@ -73,8 +73,30 @@ class Maxer
     public function getUserPhotos(User $user, int $limit): array
     {
         $link = 'http://www.maxmodels.pl/modelka-' . $user->getName() . '.html';
-        $request = new PageRequest($link, 12);
+        $request = new PageRequest($link);
         return PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), $limit));
+    }
+
+    /**
+     * @param User $user
+     * @param int $pageCount
+     * @return array
+     * @throws \RuntimeException
+     * @throws \InvalidArgumentException
+     * @internal param int $limit
+     */
+    public function getUserMultiPhotos(User $user, int $pageCount): array
+    {
+        $array = [];
+
+        for ($a = 0; $a <= $pageCount; $a++) {
+
+            $link = 'http://www.maxmodels.pl/modelka-' . $user->getName() . ',' . $a . '.html';
+            $request = new PageRequest($link);
+            $array[] = PhotosResponse::toObjects(PhotosResponse::parse($request->execute(), 20));
+        }
+
+        return $array;
     }
 
     /**
